@@ -1,4 +1,4 @@
-const API_URL = "https://api.thecatapi.com/v1/images/search?limit=3";
+const API_URL = "https://api.thecatapi.com/v1/images/search?limit=3&api_key=live_c6qF7KRLYeMBs86s5nSAS2tpm3TDH7SGU4qswN5elHTrzk0KsKYFrmMdQcv7l0ph";
 
 
 async function reload() {
