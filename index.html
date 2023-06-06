@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Gatitos Aleatorios</h1> 
-    <button onclick="reload()">Recargar</button>
-    <br>
-    <img alt="Foto de gatito aleatorio" width="150px" height="150px" id="img1">
-    <img alt="Foto de gatito aleatorio" width="150px" height="150px" id="img2">
-    <img alt="Foto de gatito aleatorio" width="150px" height="150px" id="img3">
+    <h1>Michis APPS</h1>
+    <section id="randomMichis">
+        <h2>Michis Aleatorios</h2>
+        <button onclick="reload()">Recargar</button>
+        <br>
+        <article>
+            <img alt="Foto de gatito aleatorio" width="150px" height="150px" id="img1">
+            <button>Guardar michi en favoritos</button>
+        </article>
+        <article>
+            <img alt="Foto de gatito aleatorio" width="150px" height="150px" id="img2">
+            <button>Guardar michi en favoritos</button>
+        </article>
+        <article>
+            <img alt="Foto de gatito aleatorio" width="150px" height="150px" id="img3">
+            <button>Guardar michi en favoritos</button>
+        </article> 
+    </section>
+
+    <section id="favoritesMichis">
+        <h2>Michis Aleatorios</h2>
+        <article>
+            <img alt="Foto de gatito aleatorio" width="150px" height="150px" id="img3">
+            <button>Guardar michi en favoritos</button>
+        </article> 
+    </section>
+
     <script src="./main.js"></script>
 </body>
+
 </html>
