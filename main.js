@@ -1,12 +1,17 @@
-const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=2&api_key=live_c6qF7KRLYeMBs86s5nSAS2tpm3TDH7SGU4qswN5elHTrzk0KsKYFrmMdQcv7l0ph";
-const API_URL_FAVOURITES = "https://api.thecatapi.com/v1/favourites?api_key=live_c6qF7KRLYeMBs86s5nSAS2tpm3TDH7SGU4qswN5elHTrzk0KsKYFrmMdQcv7l0ph";
-const API_URL_FAVOURITES_DELETE = (id) => `https://api.thecatapi.com/v1/favourites/${id}?api_key=live_c6qF7KRLYeMBs86s5nSAS2tpm3TDH7SGU4qswN5elHTrzk0KsKYFrmMdQcv7l0ph`;
-
+const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=2";
+const API_URL_FAVOURITES = "https://api.thecatapi.com/v1/favourites";
+const API_URL_FAVOURITES_DELETE = (id) => `https://api.thecatapi.com/v1/favourites/${id}`;
+const APIKEY = 'live_c6qF7KRLYeMBs86s5nSAS2tpm3TDH7SGU4qswN5elHTrzk0KsKYFrmMdQcv7l0ph';
 
 const spanError = document.getElementById('error');
 
 async function loadRandomMichis() {
-    const res = await fetch(API_URL_RANDOM);
+    const res = await fetch(API_URL_RANDOM, {
+        method: 'GET',
+        headers: {
+            'X-API-KEY': APIKEY,
+        }
+    });
     const data = await res.json();
     console.log("Random")
     console.log(data);
@@ -27,7 +32,12 @@ async function loadRandomMichis() {
 }
 
 async function loadFavouritesMichis() {
-    const res = await fetch(API_URL_FAVOURITES);
+    const res = await fetch(API_URL_FAVOURITES, {
+        method: 'GET',
+        headers: {
+            'X-API-KEY': APIKEY,
+        }
+    });
     const data = await res.json();
     console.log("Favorites")
     console.log(data);
@@ -64,6 +74,7 @@ async function saveFavouriteMichi(id){
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'X-API-KEY': APIKEY,
         },
         body: JSON.stringify({
             image_id: id
@@ -83,6 +94,9 @@ async function saveFavouriteMichi(id){
 async function deleteFavouriteMichi(id){
     const res = await fetch(API_URL_FAVOURITES_DELETE(id), {
         method: 'DELETE',
+        headers: {
+            'X-API-KEY': APIKEY,
+        }
     });
     const data = await res.json();
     console.log('delete');
